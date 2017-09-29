@@ -1,7 +1,10 @@
+
+<!-- Template code to display the application -->
 <template>
     <div class="vote">
         
         <div class="wrapper">
+            <!-- Left hand column -->
             <div class="box box1">
                 <div class="intro">
                     <img src="https://ronan-oleary.com/wp/wp-content/uploads/2017/09/codewars.png"/>
@@ -12,6 +15,8 @@
                     <p>Use the simple upvote/downvote mechanism to select your preference...</p>
                     <br>
                     <p>If in doubt, Maximilian Schwarzmüller (from Academind) has an excellent comparison video, click the button below to display.</p>
+                    
+                    <!-- Simple toggle effect -->
                     <button class="btn" v-on:click="display = !display">
                         <span v-if="display">Hide Video</span>
                         <span v-else>Show Video</span>
@@ -21,6 +26,7 @@
                 </div>
             </div>
             <div class="box box2">
+                <!-- Display current leader -->
                 <div> 
                     <h2>Current leader is <span class="currentLeader">{{ leader.name }}</span></h2>
                     <img class="logo" v-bind:src="leader.framework_img"/> 
@@ -34,7 +40,7 @@
             <div class="box box4">
                 
                 <div class="nested">
-                    
+                    <!-- Actual vote -->
                     <ul class="list-group">  
                         <h2>HAVE YOUR SAY!</h2>   
                         <small>(Psssst....in a real-world app, we'd limit the number of up/down votes so people couldn't cheat)</small>   
@@ -66,7 +72,7 @@
 	</div>
     
 </template>
-
+<!-- End template output, start script -->
 <script>
 export default {
   name: 'vote',
@@ -74,6 +80,7 @@ export default {
     return {
         display: false,
         leadtitle: "Who will win the battle of the JS Frameworks?", 
+        // in a real-world situation, we would pull json from an external resource or endpoint
         frameworks: [
             {
                 name: 'Vue JS',
@@ -114,6 +121,7 @@ export default {
         ]}
     },
     methods: {
+        // probably going to lose this, a simple reset, doesn't change the order, just kills the votes 
         reset() {
             this.frameworks = this.frameworks.map(function(framework) {
                 framework.votes = 0;
