@@ -1,7 +1,7 @@
 {
-  "name": "gotupvote",
+  "name": "vueframeworksvotedemo",
   "version": "1.0.0",
-  "description": "A Vue.js project",
+  "description": "A simple implementation of an up/downvote and display component using vue js and a super-quick implentation of CSS grid",
   "author": "Ro_OLeary <roleary81@gmail.com>",
   "private": true,
   "scripts": {
